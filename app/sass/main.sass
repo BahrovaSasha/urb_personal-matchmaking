@@ -12,7 +12,7 @@ html
 
 body
   font-size: 1.6rem
-  line-height: 1.8
+  line-height: 2
   overflow-x: hidden
   background-color: #fff
   position: relative
@@ -49,7 +49,7 @@ body
 
 .header-inner
   display: flex
-  justify-content: space-between
+  justify-content: flex-end
 
 
 
@@ -68,6 +68,7 @@ body
 
 .logo-wrap
   text-align: center
+  width: 100%
 
 .logo
   display: inline-block
@@ -111,6 +112,7 @@ body
 .top-screen_content
   margin-bottom: 8.5rem
   .row
+    display: flex
     justify-content: space-between
     h1
       display: block
@@ -145,10 +147,18 @@ body
   min-width: 130px
   transition: all .15s
   outline: 0
+  i
+    font-size: 1.7rem
+    line-height: 1.9rem
+    margin-right: 0.7rem
+    display: none
 
 .btn-custom.active
   cursor: default
   pointer-events: none
+  i
+    display: inline-block
+
 
 .btn-big
   font-family: robotoSlab-bold,Helvetica,Arial,sans-serif
@@ -232,11 +242,25 @@ body
   p
     padding-bottom: 5rem
 
+.left-column
+  &:before
+    content: ''
+    border: 3px solid #fd8891
+    border-radius: 7px
+    height: 330px
+    width: 85%
+    position: absolute
+    left: 10%
+    top: 60%
+    height: 420px
+    z-index: 1000
+
 .link-call
   font-size: 1.8rem
   color: $text
   text-decoration: underline
   cursor: pointer
+
 
 .matchmaking-picture
   width: 100%
@@ -247,18 +271,6 @@ body
   overflow: hidden
   left: -20%
   z-index: 0
-  &:after
-    content: ''
-    border: 3px solid #fd8891
-    border-radius: 7px
-    height: 330px
-    width: 330px
-    position: absolute
-    left: 25%
-    top: 10%
-    width: 100%
-    height: 420px
-    z-index: 1000
   img
     position: absolute
     width: auto
@@ -270,8 +282,8 @@ body
 
 .matchmaking-text_video
   width: 100%
-  height: auto
-
+  height: 30rem
+  margin-bottom: 6rem
 
 .link-contact
   color: $accent
@@ -287,7 +299,11 @@ body
     color: #fff
   .link-call
     color: #fff
-    padding-top: 5rem
+    // padding-top: 5rem
+
+.right-column
+  p
+    padding-bottom: 5rem
 
 .programs-main
   padding: 6.2rem 0
@@ -298,27 +314,71 @@ body
   justify-content: center
   flex-direction: column
   align-items: center
+  margin-bottom: 12rem
+  border-right: 2px solid rgba($accent, .4)
 
-.one-program-header
+.one-program-header_red-font
   width: 31rem
   border: 4px solid $accent
   border-radius: 24px
-  padding: 0.6rem 1rem
+  padding: 0rem 0.4rem
   margin-bottom: 3rem
   display: flex
   align-items: center
+  justify-content: center
   h4
-    font-size: 2rem
+    font-size: 1.8rem
     font-family: $headers-font
     color: $accent
     width: 90%
     text-align: center
+  i
+    color: $accent
+    font-size: 2rem
+
+.one-program-header_white-font
+  width: 31rem
+  background-color: $accent
+  border-radius: 24px
+  padding: 0.4rem 0.8rem
+  margin-bottom: 3rem
+  display: flex
+  align-items: center
+  justify-content: center
+  h4
+    font-size: 1.8rem
+    font-family: $headers-font
+    color: #fff
+    width: 90%
+    text-align: center
+  i
+    color: #fff
+    font-size: 2rem
+
+.one-program-header_gradient
+  width: 32rem
+  background: linear-gradient(to right,rgba(64,23,157,.9),rgba(234,76,88,.9))
+  border-radius: 24px
+  padding: 0.4rem 0.8rem
+  margin-bottom: 3rem
+  display: flex
+  align-items: center
+  justify-content: center
+  h4
+    font-size: 1.8rem
+    font-family: $headers-font
+    color: #fff
+    width: 90%
+    text-align: center
+  i
+    color: #fff
+    font-size: 2rem
 
 .program-content-wrapper
-  height: 16rem
+  max-height: 16rem
   overflow: hidden
   position: relative
-  transition: 0.5s ease-in
+  transition: max-height 0.5s ease
   .light-overlay
     background: linear-gradient(to top,rgba(255,255,255,1),rgba(255,255,255,0))
     position: absolute
@@ -333,23 +393,79 @@ body
   .light-overlay.active
     opacity: 0
     transition: 0.5s ease-out
+  i
+    color: $accent
+    font-size: 2rem
 
 .program-content-wrapper.active
-    height: auto
-    transition: 0.5s ease-out
+    max-height: 40rem
+    transition: max-height 0.5s ease
 
 .btn-choose
   margin-top: 3.4rem
-  font-size: 1.8rem
+  font-size: 1.6rem
   font-family: $headers-font
   color: $accent
   text-transform: uppercase
-  border: 4px solid $accent
+  border: 2px solid $accent
   border-radius: 24px
-  padding: 0.6rem 2rem
+  padding: 0rem 1rem
   background-color: #fff
 
 .btn-choose.active
   background-color: $accent
   color: #fff
   transition: 0.5s ease-out
+
+
+
+.adwantages
+  background-image: linear-gradient(to right,rgba(64,23,157,.6),rgba(234,76,88,.6)), url(../img/adult-affection-beard.jpg)
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: top
+  display: flex
+  padding: 6.8rem 0
+  color: #fff
+  .section-header
+    color: #fff
+  // p
+  //   color: #fff
+
+.adwantages-content
+  // margin-bottom: 5rem
+  .btn-white
+    // display: flex
+    // align-items: center
+    // flex-direction: column
+    margin: 5rem 0 0
+
+
+.adwantage-item
+  text-align: center
+  display: flex
+  flex-direction: column
+  // justify-content: center
+  align-items: center
+  .adw-header
+    font-family: $headers-font
+    font-size: 1.8rem
+    padding-bottom: 3rem
+
+.adw-image
+  width: 9rem
+  height: 9rem
+  margin-bottom: 3rem
+
+.video-tips
+  padding: 10rem 0
+
+.big-video-item
+  iframe
+    width: 100%
+    height: auto
+
+.video-item
+  iframe
+    width: 100%
+    height: auto
