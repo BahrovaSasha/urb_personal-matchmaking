@@ -77,7 +77,8 @@ body
 
 .header-inner
   display: flex
-  justify-content: flex-end
+  justify-content: space-between
+  flex-wrap: wrap
 
 
 
@@ -485,6 +486,27 @@ body
 
 .adwantages-content
   // margin-bottom: 5rem
+.adwantages-arrow
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  background-color: transparent
+  border: none
+  font-size: 35px
+  opacity: 0.8
+  cursor: pointer
+  outline: none
+  z-index: 10
+  i
+    color: #fff
+  &:hover
+    opacity: 1
+  &:focus
+    outline: none
+  &.left-arrow
+    left: -70px
+  &.right-arrow
+    right: -70px
 
 
 
