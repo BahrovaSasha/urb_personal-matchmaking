@@ -39,6 +39,7 @@
 								<img src="img/main_logo.png" class="main-logo" alt="Ukrainian real brides">
 								<img src="img/small-logo.png" class="small-logo" alt="Ukrainian real brides">
 							</a>
+							<!-- <a href="#popup-apply" class="btn-custom btn-apply btn-apply-mobile open-popup-link">Apply</a> -->
 						</div>
 						<div class="col header-contacts-right">
 							<div class="header-contacts d-flex justify-content-around">
@@ -806,7 +807,75 @@
 		</div>
 	</footer>
 
-	<link rel="stylesheet" href="css/main.min.css">
+	<div class="custom-popup white-popup mfp-hide" id="popup-call">
+
+		<form class="tours-top_form">
+
+			<span class="tours-top_form-title">We will call you back</span>
+			<p class="tours-top_form-subtitle">Please complete information below and press "Call me" to shedule your call</p>
+
+			<div class="tours-form_field-row">
+				<input type="text" class="tours-form_field" placeholder="Name">
+				<span class="error-message"></span>
+			</div>
+
+			<div class="tours-form_field-row">
+				<input type="email" class="tours-form_field" placeholder="Email Address">
+				<span class="error-message"></span>
+			</div>
+
+			<div class="tours-form_field-row">
+				<input type="tel" class="tours-form_field" placeholder="Phone number">
+				<span class="error-message"></span>
+			</div>
+
+			<div class="tours-form_field-row form-select">
+				<input type="text" class="call-field tours-form_field call-datepicker" id="call-datepicker" data-language="en" data-position="top right" placeholder="Select date and time to schedule the call">
+				<span class="error-message"></span>
+			</div>
+
+			<div class="tours-form_field-row">
+				<button type="submit" class="btn-custom btn-form">Call me</button>
+			</div>
+
+		</form>
+	</div>
+
+
+	<div class="custom-popup white-popup mfp-hide" id="popup-apply">
+
+		<form class="tours-top_form">
+
+			<span class="tours-top_form-title">Join Ukraine Matchmaking Tour</span>
+
+			<div class="tours-form_field-row">
+				<input type="text" class="tours-form_field" placeholder="Name">
+			</div>
+
+			<div class="tours-form_field-row">
+				<input type="email" class="tours-form_field" placeholder="Email Address">
+			</div>
+
+			<div class="tours-form_field-row">
+				<input type="tel" class="tours-form_field" placeholder="Telephone">
+			</div>
+
+			<div class="tours-form_field-row form-select">
+				<select class="tours-form_field">
+					<option value="Choose your date">Choose your date</option>
+					<option value="Choose your date">25.08.2018</option>
+					<option value="Choose your date">25.08.2018</option>
+				</select>
+			</div>
+
+			<div class="tours-form_field-row">
+				<button type="submit" class="btn-custom btn-form">Apply</button>
+			</div>
+
+		</form>
+	</div>
+
+
 	<script src="js/scripts.min.js"></script>
 
 </body>

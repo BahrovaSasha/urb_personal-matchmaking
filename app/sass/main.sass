@@ -1,11 +1,42 @@
 @import "fonts"
 @import "libs"
 @import "vars"
+@import "media"
 
 *
-  box-sizing: border-box
-  margin: 0
-  padding: 0
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #999
+	opacity: 1
+
+*:-moz-placeholder
+	color: #999
+	opacity: 1
+
+*::-moz-placeholder
+	color: #999
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #999
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #777
+body input:required:valid,
+body textarea:required:valid
+	color: #777
+
+html, body
+	height: 100%
 
 html
   font-size: 10px
@@ -29,17 +60,27 @@ body
 
 .top-screen
   height: 100vh
+  max-height: 1000px
   background-image: linear-gradient(to right,rgba(64,23,157,.4),rgba(234,76,88,.4)), url(../img/bride-couple.jpg)
   background-size: cover
   background-repeat: no-repeat
-  background-position: center
+  background-position: 0 0, 50% 30%
   display: flex
   flex-direction: column
   justify-content: flex-start
+  @include md
+    background-position: 0 0, 40% 30%
 
 .header-pm
   padding: 2.1rem 0 3.4rem
   transition: 0.3s ease
+
+.logo
+  display: inline-block
+  @include md
+    margin-bottom: 0
+  @include sm
+    max-width: 180px
 
 .header-pm.fixed
 		padding: 15px 0
@@ -67,6 +108,28 @@ body
 			align-items: center
 		.header-contacts .btn-custom
 			display: inline-block
+    @include sm
+      .logo
+				margin: 0
+			.btn-apply
+				display: block
+			.logo-wrap
+				display: flex
+				align-items: center
+				justify-content: space-between
+			.btn-call
+				display: inline-block
+				width: 38px
+				height: 38px
+				display: flex
+				align-items: center
+				justify-content: center
+				border: 1px solid rgba(0,0,0,.6)
+				border-radius: 6px
+				&:hover
+					text-decoration: none
+				i
+					color: #000
 
 .container
   width: 100%
@@ -85,9 +148,26 @@ body
 .header-contacts-right
   display: flex
   justify-content: flex-end
-  align-items: flex-start
+  align-items: center
+  max-width: 550px
+  padding-top: 10px
   .btn-custom
     display: none
+  @include md
+		padding: 0
+		padding-top: 25px
+		justify-content: space-between
+		.phone,
+		.btn-white
+			margin: 0
+      margin-right: 15px
+  @include sm
+    .phone
+      font-size: 15px
+		.btn-white
+			padding: 10px 5px 8px
+			font-size: 13px
+			margin-right: 0
 
 .header-contacts
     // padding-top: 1rem
@@ -127,22 +207,34 @@ body
       background-color: $accent
 
 .btn-white
-  display: inline-block
-  color: #fff
-  border: 2px solid #fff
-  border-radius: 6px
-  font-family: roboto-bold,Helvetica,Arial,sans-serif
-  font-size: 1.4rem
-  line-height: 1.6rem
-  text-transform: uppercase
-  padding: 1rem 1.6rem 0.8rem
-  cursor: pointer
-  text-align: center
-  margin-right: 3.8rem
-  transition: all 0.15s
+  	display: inline-block
+  	background-color: transparent
+  	color: #fff
+  	border: 2px solid #fff
+  	border-radius: 6px
+  	font-family: $default-font
+  	font-size: 14px
+  	line-height: 16px
+  	text-transform: uppercase
+  	padding: 10px 16px 8px
+  	cursor: pointer
+  	text-decoration: none
+  	text-align: center
+  	margin-right: 38px
+  	transition: all .15s
+  	&:hover
+  		background-color: #fff
+  		color: $accent
+  		outline: none
+  		text-decoration: none
+  	&:focus
+  		outline: none
 
 .top-screen_content
   margin-bottom: 8.5rem
+  @include md
+		text-align: center
+		margin-bottom: 119px
   .row
     display: flex
     justify-content: space-between
@@ -155,41 +247,77 @@ body
       padding-top: 2.3rem
       margin-bottom: 2rem
       text-shadow: 0 1px 3px rgba(0,0,0,.2)
+      @include xl
+      	font-size: 57px
+      	line-height: 60px
+      @include md
+      	font-size: 46px
+      	line-height: 47px
+      @include sm
+        display: block
+        text-align: center
+        font-size: 36px
+        line-height: 38px
     h2
       display: block
       color: #fff
       font-size: 2.2rem
       line-height: 2.8rem
       margin-bottom: 2.5rem
+      @include sm
+        display: block
+    		text-align: center
+    		font-size: 16px
+    		line-height: 28px
 
 .btn-custom
-  display: inline-block
-  background-color: $accent
-  color: #fff
-  border: none
-  border-radius: 6px
-  font-family: robotoSlab-bold,Helvetica,Arial,sans-serif
-  font-size: 14px
-  line-height: 16px
-  text-transform: uppercase
-  padding: 12px 16px 10px
-  cursor: pointer
-  text-decoration: none
-  text-align: center
-  min-width: 130px
-  transition: all .15s
-  outline: 0
-  i
-    font-size: 1.7rem
-    line-height: 1.9rem
-    margin-right: 0.7rem
-    display: none
-
-.btn-custom.active
-  cursor: default
-  pointer-events: none
-  i
-    display: inline-block
+	display: inline-block
+	background-color: $accent
+	color: #fff
+	border: none
+	border-radius: 6px
+	font-family: $headers-font
+	font-size: 14px
+	line-height: 16px
+	text-transform: uppercase
+	padding: 12px 16px 10px
+	cursor: pointer
+	text-decoration: none
+	text-align: center
+	min-width: 130px
+	transition: all .15s
+	outline: none
+	&:hover
+		text-decoration: none
+		background-color: #fc5461
+		outline: none
+		color: #fff
+	&:focus
+		background-color: #d74853
+		outline: none
+	&.reverse
+		display: block
+		background-color: transparent
+		border: 2px solid #ea4c58
+		text-transform: capitalize
+		color: #ea4c58
+		font-family: $headers-font
+		max-width: 252px
+		width: 100%
+		font-size: 16px
+		line-height: 18px
+		padding: 19px
+		margin: 0 auto
+	i
+		display: none
+		font-size: 17px
+		line-height: 19px
+		margin-right: 7px
+	&.active
+		cursor: default
+		pointer-events: none
+		i
+			display: inline-block
 
 
 .btn-big
@@ -206,6 +334,8 @@ body
   max-width: 420px
   width: 100%
   margin: 0 auto
+  @include md
+		margin: 0 auto 17px
 
 .top-screen_form-title
   padding-bottom: 3rem
@@ -228,6 +358,8 @@ body
 
 .servise-form_field-row
   margin-bottom: 1rem
+  &:last-child
+		margin-bottom: 0
 
 .servise-form_field
   display: block
@@ -255,7 +387,118 @@ body
   font-size: 1.4rem
   line-height: 3rem
   margin: 0
-  font-family: $text,Helvetica,Arial,sans-serif
+  font-family: $default-font,Helvetica,Arial,sans-serif
+
+.tours-top_form
+	background-color: rgba(255,255,255,.9)
+	border-radius: 6px
+	padding: 31px 30px 19px
+	max-width: 420px
+	width: 100%
+	margin: 0 auto
+	@include md
+		margin: 0 auto 17px
+
+.tours-top_form-title
+	padding-bottom: 43px
+	position: relative
+	font-size: 21px
+	font-family: $headers-font
+	text-align: center
+	display: block
+	color: $text
+	margin-bottom: 21px
+	&:after
+		content: ''
+		position: absolute
+		left: 50%
+		bottom: 0
+		transform: translateX(-50%)
+		background-image: url('../img/title-bg.png')
+		background-repeat: no-repeat
+		background-size: contain
+		background-position: 50% 0
+		width: 100%
+		height: 25px
+
+.tours-top_form-subtitle
+	display: block
+	font-size: 14px
+	line-height: 24px
+	font-family: $default-font
+	text-align: center
+	margin-bottom: 24px
+
+.tours-form_field-row
+	margin-bottom: 10px
+	&:last-child
+		margin-bottom: 0
+
+.top-error-field,
+.error-field,
+.price-error-field,
+.apply-error-field
+	display: block
+	text-align: center
+	font-size: 12px
+	line-height: 14px
+	margin-bottom: 10px
+	color: $accent
+
+.form-select
+	position: relative
+	select
+		outline: none
+		cursor: pointer
+		&:focus
+			outline: none
+	&:after
+		content: ''
+		position: absolute
+		right: 12px
+		top: 50%
+		transform: translateY(-50%)
+		width: 0
+		height: 0
+		border-left: 4px solid transparent
+		border-right: 4px solid transparent
+		border-top: 5px solid #000
+
+.tours-form_field,
+select.tours-form_field
+	display: block
+	background-color: #fff
+	width: 100%
+	border: 1px solid #d4d4cf
+	border-radius: 6px
+	padding: 12px 14px 10px 14px
+	font-size: 14px
+	transition: all .15s
+	&:focus
+		outline: none
+		border-color: #80807d
+
+input.tours-form_field,
+select.tours-form_field,
+	appearance: none
+
+.btn-form
+	width: 100%
+	padding: 16px 14px 16px 14px
+	margin-top: 14px
+	margin-bottom: 10px
+	font-family: $headers-font
+	font-size: 16px
+	line-height: 18px
+
+.form-subhead
+	display: block
+	text-align: center
+	color: #333
+	font-size: 14px
+	line-height: 30px
+	margin: 0
+	font-family: $default-font
 
 
 .matchmaking-about
@@ -636,6 +879,21 @@ body
 	// @include md
 	// 	padding: 50px 0
 /* contact us styles section */
+
+.section-title_line
+  position: relative
+  font-size: 34px
+  font-family: $headers-font
+  text-align: center
+  display: block
+  color: $text
+  margin-bottom: 55px
+  padding-bottom: 49px
+  border-bottom: 2px solid rgba(234,76,88,.4)
+  // @include md
+  //   font-size: 24px
+  //   margin-bottom: 44px
+
 .contact
 	padding-top: 60px
 
@@ -880,3 +1138,71 @@ input[type='checkbox']:checked+label:after
 		padding: 0 10px
 		&:hover
 			text-decoration: none
+
+
+.white-popup
+  position: relative
+  background: #fff
+  padding: 20px
+  width: auto
+  max-width: 500px
+  margin: 20px auto
+
+.custom-popup
+	background-color: #fbe7e5
+	border: 4px solid #fa8e88
+	border-radius: 6px
+	form
+		background-color: transparent
+
+.datepicker
+	z-index: 9999999
+
+/*page preloader*/
+.preloader-wrap
+	background-color: #fff
+	position: fixed
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+	z-index: 1000
+
+.error-message
+	display: block
+	text-align: center
+	color: $red
+	font-size: 12px
+	line-height: 16px
+
+.spinner
+	width: 40px
+	height: 40px
+	position: relative
+	margin: 100px auto
+
+.double-bounce1,
+.double-bounce2
+	display: block
+	width: 100%
+	height: 100%
+	background-image: url('../img/lp_tours/heart-small.png')
+	background-size: contain
+	background-position: 0 0
+	background-repeat: no-repeat
+	background-color: transparent
+	opacity: 0.6
+	position: absolute
+	top: 0
+	left: 0
+	animation: sk-bounce 2.0s infinite ease-in-out
+
+.double-bounce2
+	animation-delay: -1.0s
+
+@keyframes sk-bounce
+	0%, 100%
+		transform: scale(0.0)
+	50%
+		transform: scale(1.0)

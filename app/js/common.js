@@ -26,11 +26,15 @@ $(function() {
 	});
 });
 
+$('.open-popup-link').magnificPopup({
+	type:'inline',
+	midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+});
+
 $('.adwantages-content').slick({
 	slidesToShow: 3,
 	slidesToScroll: 1,
-	//asNavFor: '.ladies-video_slider',
-	focusOnSelect: true,
+	// focusOnSelect: true,
 	infinite: true,
 	adaptiveHeight: true,
 	appendArrows: '.adwantages-content',

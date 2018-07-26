@@ -32,7 +32,7 @@ gulp.task('scripts', ['common-js'], function() {
 		'app/libs/datepicker/datepicker.en.js',
 		//datepicker end
 		'app/libs/slick-1.8.1/slick/slick.min.js',
-		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
+		'app/libs/magnific-popup/jquery.magnific-popup.min.js',
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
