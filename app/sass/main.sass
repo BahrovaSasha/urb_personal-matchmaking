@@ -108,28 +108,28 @@ body
 			align-items: center
 		.header-contacts .btn-custom
 			display: inline-block
-    @include sm
-      .logo
-				margin: 0
-			.btn-apply
-				display: block
-			.logo-wrap
-				display: flex
-				align-items: center
-				justify-content: space-between
-			.btn-call
-				display: inline-block
-				width: 38px
-				height: 38px
-				display: flex
-				align-items: center
-				justify-content: center
-				border: 1px solid rgba(0,0,0,.6)
-				border-radius: 6px
-				&:hover
-					text-decoration: none
-				i
-					color: #000
+    // @include sm
+    //   .logo
+		// 		margin: 0
+		// 	.btn-apply
+		// 		display: block
+		// 	.logo-wrap
+		// 		display: flex
+		// 		align-items: center
+		// 		justify-content: space-between
+		// 	.btn-call
+		// 		display: inline-block
+		// 		width: 38px
+		// 		height: 38px
+		// 		display: flex
+		// 		align-items: center
+		// 		justify-content: center
+		// 		border: 1px solid rgba(0,0,0,.6)
+		// 		border-radius: 6px
+		// 		&:hover
+		// 			text-decoration: none
+		// 		i
+		// 			color: #000
 
 .container
   width: 100%
@@ -143,27 +143,25 @@ body
   justify-content: space-between
   flex-wrap: wrap
 
-
-
 .header-contacts-right
-  display: flex
-  justify-content: flex-end
-  align-items: center
-  max-width: 550px
-  padding-top: 10px
-  .btn-custom
-    display: none
-  @include md
+	display: flex
+	justify-content: flex-end
+	align-items: center
+	max-width: 550px
+	padding-top: 10p
+	.btn-custom
+		display: none
+	@include md
 		padding: 0
 		padding-top: 25px
 		justify-content: space-between
 		.phone,
 		.btn-white
 			margin: 0
-      margin-right: 15px
-  @include sm
-    .phone
-      font-size: 15px
+			margin-right: 15px
+	 @include sm
+		.phone
+			font-size: 15px
 		.btn-white
 			padding: 10px 5px 8px
 			font-size: 13px
@@ -265,7 +263,7 @@ body
       line-height: 2.8rem
       margin-bottom: 2.5rem
       @include sm
-        display: block
+				display: block
     		text-align: center
     		font-size: 16px
     		line-height: 28px
@@ -511,6 +509,9 @@ select.tours-form_field,
   padding-bottom: 5rem
   text-transform: uppercase
   letter-spacing: 0.2rem
+  @include md
+		font-size: 24px
+		margin-bottom: 44px
 
 
 .matchmaking-text

@@ -1,6 +1,4 @@
-@import "vars"
-
-// Small tablets and large smartphones (landscape view)
+// Extra small devices
 $screen-xs-max: 350
 
 // Small tablets and large smartphones (landscape view)
@@ -14,6 +12,7 @@ $screen-lg-max: 992
 
 // Large tablets and desktops
 $screen-xl-max: 1200
+
 
 // Custom devices
 @mixin rwd($screen)
@@ -30,15 +29,17 @@ $screen-xl-max: 1200
 	@media only screen and (max-width: $screen-lg-max +'px')
 		@content
 
+// Medium devices
 @mixin md
 	@media only screen and (max-width: $screen-md-max +'px')
 		@content
 
+// Small devices
 @mixin sm
 	@media only screen and (max-width: $screen-sm-max +'px')
 		@content
 
-// Small devices
+// Extra-small devices
 @mixin xs
 	@media only screen and (max-width: $screen-xs-max +'px')
 		@content
