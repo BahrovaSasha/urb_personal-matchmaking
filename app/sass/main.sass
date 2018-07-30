@@ -2,6 +2,7 @@
 @import "libs"
 @import "vars"
 @import "media"
+// @import "media-queries"
 
 *
 	-webkit-box-sizing: border-box
@@ -59,17 +60,16 @@ body
     height: auto
 
 .top-screen
-  height: 100vh
-  max-height: 1000px
-  background-image: linear-gradient(to right,rgba(64,23,157,.4),rgba(234,76,88,.4)), url(../img/bride-couple.jpg)
-  background-size: cover
-  background-repeat: no-repeat
-  background-position: 0 0, 50% 30%
-  display: flex
-  flex-direction: column
-  justify-content: flex-start
-  @include md
-    background-position: 0 0, 40% 30%
+	height: 93rem
+	background-image: linear-gradient(to right,rgba(64,23,157,.4),rgba(234,76,88,.4)), url(../img/bride-couple.jpg)
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: 0 0, 50% 30%
+	display: flex
+	flex-direction: column
+	justify-content: flex-start
+	@include md
+		background-position: 0 0, 40% 30%
 
 .header-pm
   padding: 2.1rem 0 3.4rem
@@ -81,6 +81,10 @@ body
     margin-bottom: 0
   @include sm
     max-width: 180px
+
+.btn-call,
+.btn-custom.btn-apply-mobile
+	display: none
 
 .header-pm.fixed
 		padding: 15px 0
@@ -108,28 +112,36 @@ body
 			align-items: center
 		.header-contacts .btn-custom
 			display: inline-block
-    // @include sm
-    //   .logo
-		// 		margin: 0
-		// 	.btn-apply
-		// 		display: block
-		// 	.logo-wrap
-		// 		display: flex
-		// 		align-items: center
-		// 		justify-content: space-between
-		// 	.btn-call
-		// 		display: inline-block
-		// 		width: 38px
-		// 		height: 38px
-		// 		display: flex
-		// 		align-items: center
-		// 		justify-content: center
-		// 		border: 1px solid rgba(0,0,0,.6)
-		// 		border-radius: 6px
-		// 		&:hover
-		// 			text-decoration: none
-		// 		i
-		// 			color: #000
+			//работает в большем размере//////////////////////////////////////
+    @include sm
+			.logo
+				margin: 0
+			.btn-apply
+				display: block
+			.logo-wrap
+				display: flex
+				align-items: center
+				justify-content: space-between
+			.btn-call
+				display: inline-block
+				width: 38px
+				height: 38px
+				display: flex
+				align-items: center
+				justify-content: center
+				border: 1px solid rgba(0,0,0,.6)
+				border-radius: 6px
+				&:hover
+					text-decoration: none
+				i
+					color: #000
+			.header-contcts_right
+				display: none
+			.btn-apply-mobile
+				display: inline-block
+				font-size: 14px
+				padding: 11px
+				min-width: 68px
 
 .container
   width: 100%
@@ -146,9 +158,9 @@ body
 .header-contacts-right
 	display: flex
 	justify-content: flex-end
-	align-items: center
-	max-width: 550px
-	padding-top: 10p
+	align-items: flex-start
+	// max-width: 550px
+	// padding-top: 10px
 	.btn-custom
 		display: none
 	@include md
@@ -168,12 +180,29 @@ body
 			margin-right: 0
 
 .header-contacts
-    // padding-top: 1rem
-    display: flex
-    // flex-direction: row
-    align-items: center
-    // max-width: 55rem
-    justify-content: space-around
+	padding-top: 10px
+	align-items: center
+	justify-content: flex-end
+	max-width: 550px
+	@include md
+		padding: 0
+		padding-top: 25px
+		justify-content: space-between
+		.phones,
+		.btn-white
+			margin: 0
+			margin-right: 15px
+	@include sm
+		.phone
+			font-size: 15px
+		.btn-white
+			padding: 10px 5px 8px
+			font-size: 13px
+			margin-right: 0
+		.btn-custom
+			display: none
+	@include md
+		margin: 0 auto
 
 .logo-wrap
   text-align: center
@@ -229,45 +258,43 @@ body
   		outline: none
 
 .top-screen_content
-  margin-bottom: 8.5rem
-  @include md
+	margin-bottom: 8.5rem
+	h1
+		display: block
+		color: #fff
+		font-family: $headers-font
+		font-size: 72px
+		line-height: 72px
+		padding-top: 23px
+		margin-bottom: 20px
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2)
+		@include xl
+			font-size: 57px
+			line-height: 60px
+		@include md
+			font-size: 46px
+			line-height: 47px
+		@include sm
+			display: block
+			text-align: center
+			font-size: 36px
+			line-height: 38px
+
+	h2
+		display: block
+		color: #fff
+		font-size: 22px
+		line-height: 28px
+		margin-bottom: 25px
+		@include sm
+			display: block
+			text-align: center
+			font-size: 16px
+			line-height: 28px
+
+	@include md
 		text-align: center
 		margin-bottom: 119px
-  .row
-    display: flex
-    justify-content: space-between
-    h1
-      display: block
-      color: #fff
-      font-family: $headers-font
-      font-size: 7.2rem
-      line-height: 7.2rem
-      padding-top: 2.3rem
-      margin-bottom: 2rem
-      text-shadow: 0 1px 3px rgba(0,0,0,.2)
-      @include xl
-      	font-size: 57px
-      	line-height: 60px
-      @include md
-      	font-size: 46px
-      	line-height: 47px
-      @include sm
-        display: block
-        text-align: center
-        font-size: 36px
-        line-height: 38px
-    h2
-      display: block
-      color: #fff
-      font-size: 2.2rem
-      line-height: 2.8rem
-      margin-bottom: 2.5rem
-      @include sm
-				display: block
-    		text-align: center
-    		font-size: 16px
-    		line-height: 28px
-
 .btn-custom
 	display: inline-block
 	background-color: $accent
@@ -325,6 +352,13 @@ body
   padding: 17px 15px 21px
   min-width: 252px
 
+.btn-video
+	@include md
+		margin-bottom: 6rem
+
+// .btn-apply-mobile
+// 	display: none
+
 .top-screen_form
   background-color: rgba(255,255,255,.9)
   border-radius: 6px
@@ -355,8 +389,8 @@ body
   color: $accent
 
 .servise-form_field-row
-  margin-bottom: 1rem
-  &:last-child
+	margin-bottom: 1rem
+	&:last-child
 		margin-bottom: 0
 
 .servise-form_field
@@ -426,11 +460,11 @@ body
 	font-family: $default-font
 	text-align: center
 	margin-bottom: 24px
-
+//не работает падинг
 .tours-form_field-row
 	margin-bottom: 10px
-	&:last-child
-		margin-bottom: 0
+	// &:last-child
+	// 	margin-bottom: 0
 
 .top-error-field,
 .error-field,
@@ -779,8 +813,8 @@ select.tours-form_field,
 
 .ladies-video
 	padding: 160px 0 130px
-	// @include md
-	// 	padding: 50px 0
+	@include md
+		padding: 50px 0
 
 .ladies-video_slider
 	margin-bottom: 60px
@@ -859,11 +893,11 @@ select.tours-form_field,
 		left: -70px
 	&.right-arrow
 		right: -70px
-	// @include md
-	// 	&.left-arrow
-	// 		left: -15px
-	// 	&.right-arrow
-	// 		right: -15px
+	@include md
+		&.left-arrow
+			left: -15px
+		&.right-arrow
+			right: -15px
 
 
 .contact-form_wrap
@@ -874,11 +908,11 @@ select.tours-form_field,
 	padding-top: 85px
 	padding-bottom: 150px
 
-  // display: flex
-  // justify-content: center
-  // align-content: center
-	// @include md
-	// 	padding: 50px 0
+  display: flex
+  justify-content: center
+  align-content: center
+	@include md
+		padding: 50px 0
 /* contact us styles section */
 
 .section-title_line
@@ -891,9 +925,9 @@ select.tours-form_field,
   margin-bottom: 55px
   padding-bottom: 49px
   border-bottom: 2px solid rgba(234,76,88,.4)
-  // @include md
-  //   font-size: 24px
-  //   margin-bottom: 44px
+  @include md
+    font-size: 24px
+    margin-bottom: 44px
 
 .contact
 	padding-top: 60px
@@ -915,8 +949,8 @@ select.tours-form_field,
 	padding: 50px 55px
 	box-shadow: 0 0 25px rgba(0, 0, 0, 0.15)
 	background-color: #fff
-	// @include md
-	// 	padding: 50px 15px
+	@include md
+		padding: 50px 15px
 
 .form-input
 	font-size: 16px
@@ -989,8 +1023,8 @@ textarea.form-input
 	display: flex
 	justify-content: space-between
 	align-items: center
-	// @include md
-	// 	margin: 5px 10px
+	@include md
+		margin: 5px 10px
 
 .checkbox-item label
 	margin: 0
@@ -1018,9 +1052,9 @@ textarea.form-input
 	left: 0
 	margin: 0
 	transform: translateY(-50%)
-	// @include md
-	// 	width: 15px
-	// 	height: 16px
+	@include md
+		width: 15px
+		height: 16px
 
 
 .check-label:after
@@ -1120,15 +1154,15 @@ input[type='checkbox']:checked+label:after
 	display: flex
 	align-items: center
 	justify-content: space-between
-	// @include lg
-	// 	flex-direction: column
-	// 	justify-content: center
-	// 	.footer-phone
-	// 		margin-bottom: 25px
-	// 	.footer-nav
-	// 		display: flex
-	// 		justify-content: center
-	// 		flex-wrap: wrap
+	@include lg
+		flex-direction: column
+		justify-content: center
+		.footer-phone
+			margin-bottom: 25px
+		.footer-nav
+			display: flex
+			justify-content: center
+			flex-wrap: wrap
 
 .footer-nav
 	a

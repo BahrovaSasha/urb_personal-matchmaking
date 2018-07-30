@@ -41,6 +41,22 @@ gulp.task('scripts', ['common-js'], function() {
 	.pipe(browserSync.reload({stream: true}));
 });
 
+var notify = require( 'gulp-notify' );
+
+gulp.task( 'sass', function()
+{
+  gulp.src( 'sass/styles.scss' )
+    .pipe( sass().on( 'error', notify.onError(
+      {
+        message: "<%= error.message %>",
+        title  : "Sass Error!"
+      } ) )
+  )
+    .pipe( gulp.dest( 'css/' ) )
+    .pipe( notify( 'SASS - хорошая работа!' ) );
+} );
+
+
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {

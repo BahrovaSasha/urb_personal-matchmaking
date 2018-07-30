@@ -9,7 +9,8 @@
   "author": "Tuzov D.",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.24.4",
+    "browser-sync": "^2.24.6",
+    "connect-browser-sync": "^2.1.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
@@ -18,14 +19,15 @@
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-notify": "^3.2.0",
-    "gulp-rename": "^1.2.3",
+    "gulp-rename": "^1.4.0",
     "gulp-rsync": "0.0.8",
     "gulp-sass": "^4.0.1",
-    "gulp-uglify": "^3.0.0",
+    "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
     "vinyl-ftp": "^0.6.1"
   },
   "dependencies": {
-    "npm-check-updates": "^2.14.2"
+    "npm-check-updates": "^2.14.2",
+    "sass-mediaqueries": "^1.6.1"
   }
 }
