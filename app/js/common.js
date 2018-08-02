@@ -1,12 +1,12 @@
 $(document).ready(function(){
-// 			$('.row.adwantages-content').slick({
+// 			$('.row.advantages-content').slick({
 // 				speed: 300,
 // 				infinite: true,
 // 				slidesToShow: 3,
 // 				slidesToScroll: 1,
 // 				prevArrow: '<span class="arrow left_arrow"><i class="fas fa-chevron-left"></i></span>',
 // 				nextArrow: '<span class="arrow right_arrow"><i class="fas fa-chevron-right"></i></span>',
-// 				appendArrows: '.adwantages'
+// 				appendArrows: '.advantages'
 
 
 $(function() {
@@ -31,15 +31,15 @@ $('.open-popup-link').magnificPopup({
 	midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
 });
 
-$('.adwantages-content').slick({
+$('.advantages-content').slick({
 	slidesToShow: 3,
 	slidesToScroll: 1,
 	// focusOnSelect: true,
 	infinite: true,
 	adaptiveHeight: true,
-	appendArrows: '.adwantages-content',
-	prevArrow: '<button type="button" class="adwantages-arrow left-arrow"><i class="fas fa-chevron-left"></i></button>',
-	nextArrow: '<button type="button" class="adwantages-arrow right-arrow"><i class="fas fa-chevron-right"></i></button>',
+	appendArrows: '.advantages-content',
+	prevArrow: '<button type="button" class="advantages-arrow left-arrow"><i class="fas fa-chevron-left"></i></button>',
+	nextArrow: '<button type="button" class="advantages-arrow right-arrow"><i class="fas fa-chevron-right"></i></button>',
 	infinite: true,
 	responsive: [
 		{

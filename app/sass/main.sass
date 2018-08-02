@@ -38,29 +38,35 @@ body textarea:required:valid
 
 html, body
 	height: 100%
+	// width: 100%
 
 html
   font-size: 10px
 
 body
-  font-size: 1.6rem
-  line-height: 2
-  overflow-x: hidden
-  background-color: #fff
-  position: relative
-  color: $text
-  font-family: $default-font
-  a
-    text-decoration: none
-    &:hover
-      text-decoration: none
+	font-size: 1.6rem
+	line-height: 2
+	overflow-x: hidden
+	background-color: #fff
+	position: relative
+	color: $text
+	font-family: $default-font
+	overflow-x: hidden
+	a
+		text-decoration: none
+		&:hover
+			text-decoration: none
 
   img
     max-width: 100%
     height: auto
 
+.wrap-pm
+	overflow-x: hidden
+
 .top-screen
-	height: 93rem
+	height: 100vh
+	min-height: 93rem
 	background-image: linear-gradient(to right,rgba(64,23,157,.4),rgba(234,76,88,.4)), url(../img/bride-couple.jpg)
 	background-size: cover
 	background-repeat: no-repeat
@@ -69,11 +75,13 @@ body
 	flex-direction: column
 	justify-content: flex-start
 	@include md
-		background-position: 0 0, 40% 30%
+		background-position: 0 0, 20% 30%
+		// height: 100vh
+		// max-height: 200rem
 
 .header-pm
   padding: 2.1rem 0 3.4rem
-  transition: 0.3s ease
+  // transition: 0.3s ease
 
 .logo
   display: inline-block
@@ -96,7 +104,39 @@ body
 		box-shadow: 0 2px 15px rgba(0,0,0,.15)
 		width: 100%
 		color: #000
-    transition: 0.3s ease
+		// transition: 0.3s ease
+		@include sm
+			.logo
+				margin: 0
+			.btn-apply
+				display: block
+			.logo-wrap
+				display: flex
+				align-items: center
+				justify-content: space-between
+			.header-contacts-right
+				display: none
+			.btn-apply-mobile
+				display: inline-block
+				font-size: 14px
+				padding: 11px
+				min-width: 68px
+			.btn-call
+				display: inline-block
+				width: 38px
+				height: 38px
+				display: flex
+				align-items: center
+				justify-content: center
+				border: 1px solid rgba(0,0,0,.6)
+				border-radius: 6px
+				i
+					color: #000
+				&:hover
+					text-decoration: none
+		// display: none
+
+
 		.phones
 			a
 				color: #000
@@ -113,47 +153,26 @@ body
 		.header-contacts .btn-custom
 			display: inline-block
 			//работает в большем размере//////////////////////////////////////
-    @include sm
-			.logo
-				margin: 0
-			.btn-apply
-				display: block
-			.logo-wrap
-				display: flex
-				align-items: center
-				justify-content: space-between
-			.btn-call
-				display: inline-block
-				width: 38px
-				height: 38px
-				display: flex
-				align-items: center
-				justify-content: center
-				border: 1px solid rgba(0,0,0,.6)
-				border-radius: 6px
-				&:hover
-					text-decoration: none
-				i
-					color: #000
-			.header-contcts_right
-				display: none
-			.btn-apply-mobile
-				display: inline-block
-				font-size: 14px
-				padding: 11px
-				min-width: 68px
 
 .container
-  width: 100%
-  max-width: 114rem
-  padding: 0 1.5rem
-  margin-right: auto
-  margin-left: auto
+	width: 100%
+	// max-width: 114rem
+	// padding: 0 1.5rem
+	margin-right: auto
+	margin-left: auto
+	@include xl
+		max-width: 114rem
+	@include lg
+		max-width: 96rem
+	@include md
+		max-width: 72rem
+	@include sm
+		max-width: 54rem
 
-.header-inner
-  display: flex
-  justify-content: space-between
-  flex-wrap: wrap
+// .header-inner
+//   display: flex
+//   justify-content: space-between
+//   flex-wrap: wrap
 
 .header-contacts-right
 	display: flex
@@ -165,7 +184,7 @@ body
 		display: none
 	@include md
 		padding: 0
-		padding-top: 25px
+		// padding-top: 25px
 		justify-content: space-between
 		.phone,
 		.btn-white
@@ -178,6 +197,7 @@ body
 			padding: 10px 5px 8px
 			font-size: 13px
 			margin-right: 0
+
 
 .header-contacts
 	padding-top: 10px
@@ -199,14 +219,20 @@ body
 			padding: 10px 5px 8px
 			font-size: 13px
 			margin-right: 0
-		.btn-custom
-			display: none
 	@include md
 		margin: 0 auto
 
+.btn-video
+	@include md
+		margin-bottom: 60px
+
+.btn-apply
+	@include md
+		display: none
+
 .logo-wrap
   text-align: center
-  width: 100%
+  // width: 100%
 
 .logo
   display: inline-block
@@ -259,6 +285,8 @@ body
 
 .top-screen_content
 	margin-bottom: 8.5rem
+	@include xl
+		padding: 0 2rem
 	h1
 		display: block
 		color: #fff
@@ -545,7 +573,7 @@ select.tours-form_field,
   letter-spacing: 0.2rem
   @include md
 		font-size: 24px
-		margin-bottom: 44px
+		// margin-bottom: 44px
 
 
 .matchmaking-text
@@ -553,17 +581,26 @@ select.tours-form_field,
     padding-bottom: 5rem
 
 .left-column
-  &:before
-    content: ''
-    border: 3px solid #fd8891
-    border-radius: 7px
-    height: 330px
-    width: 85%
-    position: absolute
-    left: 10%
-    top: 60%
-    height: 420px
-    z-index: 2
+	&:before
+		content: ''
+		border: 3px solid #fd8891
+		border-radius: 7px
+		width: 85%
+		position: absolute
+		left: 10%
+		top: 60%
+		height: 42rem
+		z-index: 2
+		@include xl
+			left: 15%
+			top: 55%
+		@include lg
+			// left: 10%
+			top: 65%
+			height: 36rem
+		@include md
+			display: none
+
 
 .link-call
   font-size: 1.8rem
@@ -573,22 +610,32 @@ select.tours-form_field,
 
 
 .matchmaking-picture
-  width: 100%
-  height: 420px
-  border-radius: 7px
-  position: relative
-  margin: 0 auto
-  overflow: hidden
-  left: -20%
-  z-index: 0
-  img
-    position: absolute
-    width: auto
-    height: 100%
-    margin: 0 auto
-    left: 50%
-    top: 50%
-    transform: translate(-50%,-50%)
+	width: 100%
+	height: 42rem
+	border-radius: 7px
+	position: relative
+	margin: 0 auto
+	overflow: hidden
+	left: -20%
+	z-index: 0
+	img
+		position: absolute
+		width: auto
+		height: 100%
+		margin: 0 auto
+		left: 50%
+		top: 50%
+		transform: translate(-50%,-50%)
+		@include xl
+			width: 100%
+	    height: auto
+	@include xl
+		left: 0
+	@include lg
+		height: 34rem
+	@include md
+		display: none
+
 
 .matchmaking-text_video
   width: 100%
@@ -620,99 +667,124 @@ select.tours-form_field,
   text-align: center
 
 .program-item
-  display: flex
-  justify-content: center
-  flex-direction: column
-  align-items: center
-  margin-bottom: 12rem
-  border-right: 2px solid rgba($accent, .4)
-  .fa-angle-down
+	display: flex
+	justify-content: center
+	flex-direction: column
+	align-items: center
+	margin-bottom: 12rem
+	border-right: 2px solid rgba($accent, .4)
+	border-left: 2px solid rgba($accent, .4)
+	.fa-angle-down
     transition: 0.5s ease
+	@include lg
+		margin-bottom: 8rem
+	@include md
+		border-right: none
+		border-left: none
 
 .one-program-header_red-font
-  width: 31rem
-  border: 4px solid $accent
-  border-radius: 24px
-  padding: 0rem 0.4rem
-  margin-bottom: 3rem
-  display: flex
-  align-items: center
-  justify-content: center
-  h4
-    font-size: 1.8rem
-    font-family: $headers-font
-    color: $accent
-    width: 90%
-    text-align: center
-  i
+	width: 31rem
+	border: 2px solid $accent
+	border-radius: 24px
+	padding: 0rem 0.4rem
+	margin-bottom: 3rem
+	display: flex
+	align-items: center
+	justify-content: center
+	@include md
+		width: 28rem
+	h4
+		font-size: 1.8rem
+		font-family: $headers-font
+		color: $accent
+		width: 90%
+		text-align: center
+		margin-bottom: 0
+		@include md
+			font-size: 1.4rem
+	i
     color: $accent
     font-size: 2rem
 
 .one-program-header_white-font
-  width: 31rem
-  background-color: $accent
-  border-radius: 24px
-  padding: 0.4rem 0.8rem
-  margin-bottom: 3rem
-  display: flex
-  align-items: center
-  justify-content: center
-  h4
-    font-size: 1.8rem
-    font-family: $headers-font
-    color: #fff
-    width: 90%
-    text-align: center
-  i
+	width: 31rem
+	background-color: $accent
+	border-radius: 24px
+	padding: 0.4rem 0.8rem
+	margin-bottom: 3rem
+	display: flex
+	align-items: center
+	justify-content: center
+	@include md
+		width: 28rem
+	h4
+		font-size: 1.8rem
+		font-family: $headers-font
+		color: #fff
+		width: 90%
+		text-align: center
+		margin-bottom: 0
+		@include md
+			font-size: 1.4rem
+	i
     color: #fff
     font-size: 2rem
 
 .one-program-header_gradient
-  width: 32rem
-  background: linear-gradient(to right,rgba(64,23,157,.9),rgba(234,76,88,.9))
-  border-radius: 24px
-  padding: 0.4rem 0.8rem
-  margin-bottom: 3rem
-  display: flex
-  align-items: center
-  justify-content: center
-  h4
-    font-size: 1.8rem
-    font-family: $headers-font
-    color: #fff
-    width: 90%
-    text-align: center
-  i
+	width: 32rem
+	background: linear-gradient(to right,rgba(64,23,157,.9),rgba(234,76,88,.9))
+	border-radius: 24px
+	padding: 0.4rem 0.8rem
+	margin-bottom: 3rem
+	display: flex
+	align-items: center
+	justify-content: center
+	@include md
+		width: 28rem
+	h4
+		font-size: 1.8rem
+		font-family: $headers-font
+		color: #fff
+		width: 90%
+		text-align: center
+		margin-bottom: 0
+		@include md
+			font-size: 1.4rem
+	i
     color: #fff
     font-size: 2rem
 
 .program-content-wrapper
-  max-height: 16rem
-  overflow: hidden
-  position: relative
-  transition: max-height 0.5s ease
-  a
+	max-height: 15rem
+	overflow: hidden
+	position: relative
+	transition: max-height 0.5s ease
+	a
     color: $accent
     cursor: pointer
+	// display: block
+	@include lg
+		max-height: 10rem
 
-  .light-overlay
-    background: linear-gradient(to top,rgba(255,255,255,1),rgba(255,255,255,0))
-    position: absolute
-    z-index: 2
-    width: 100%
-    height: 100%
-    margin: 0 auto
-    left: 50%
-    top: 50%
-    transform: translate(-50%,-50%)
-    transition: 0.5s ease-in
 
-  .step
-    color: $accent
-    font-family: $headers-font
-    padding-right: 1rem
+.light-overlay
+  background: linear-gradient(to top,rgba(255,255,255,1),rgba(255,255,255,0))
+  position: absolute
+  z-index: 2
+  width: 100%
+  height: 100%
+  margin: 0 auto
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
+  transition: 0.5s ease-in
+
+.step
+  color: $accent
+  font-family: $headers-font
+  padding-right: 1rem
   i
-    color: $accent
+  	color: $accent
     font-size: 2rem
 
 .program-item.active
@@ -726,21 +798,26 @@ select.tours-form_field,
   .program-content-wrapper
     max-height: 60rem
     transition: max-height 0.5s ease
-    .light-overlay
+		.light-overlay
       opacity: 0
       transition: 0.5s ease-out
+		@include lg
+			display: block
+
 
 
 .btn-choose
-  margin-top: 3.4rem
-  font-size: 1.6rem
-  font-family: $headers-font
-  color: $accent
-  text-transform: uppercase
-  border: 2px solid $accent
-  border-radius: 24px
-  padding: 0rem 1rem
-  background-color: #fff
+	margin-top: 3.4rem
+	font-size: 1.6rem
+	font-family: $headers-font
+	color: $accent
+	text-transform: uppercase
+	border: 2px solid $accent
+	border-radius: 24px
+	padding: 0rem 1rem
+	background-color: #fff
+	@include md
+		margin-top: 0
 
 .btn-choose.active
   background-color: $accent
@@ -749,22 +826,31 @@ select.tours-form_field,
 
 
 
-.adwantages
-  background-image: linear-gradient(to right,rgba(64,23,157,.6),rgba(234,76,88,.6)), url(../img/adult-affection-beard.jpg)
-  background-size: cover
-  background-repeat: no-repeat
-  background-position: top
-  display: flex
-  padding: 6.8rem 0
-  color: #fff
-  .section-header
-    color: #fff
-  // p
-  //   color: #fff
+.advantages
+	background: linear-gradient(to right,rgba(64,23,157,.6),rgba(234,76,88,.6)), url(../img/adult-affection-beard.jpg)
+	background-size: cover
+	background-position: top
+	display: flex
+	padding: 6.8rem 0
+	color: #fff
+	-webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+	width: 100%
+	.section-header
+		color: #fff
+	// -webkit-background-size: cover
+	// -moz-background-size: cover
+	// -o-background-size: cover
+  // background-repeat: no-repeat
 
-.adwantages-content
+	// min-width: 25rem
+
+
+
+.advantages-content
   // margin-bottom: 5rem
-.adwantages-arrow
+.advantages-arrow
   position: absolute
   top: 50%
   transform: translateY(-50%)
@@ -774,7 +860,7 @@ select.tours-form_field,
   opacity: 0.8
   cursor: pointer
   outline: none
-  z-index: 10
+  z-index: 5
   i
     color: #fff
   &:hover
@@ -786,28 +872,56 @@ select.tours-form_field,
   &.right-arrow
     right: -70px
 
+.advantages-arrow.right-arrow
+	@include xl
+		right: 15px
+	@include lg
+		right: 2rem
+		top: 20%
 
+.advantages-arrow.left-arrow
+	@include xl
+		left: 15px
+	@include lg
+		left: 2rem
+		top: 20%
 
-.adwantage-item
+.advantage-item
   text-align: center
-  display: flex
-  flex-direction: column
+  // display: flex
+  // flex-direction: column
   // justify-content: center
-  align-items: center
-  .adw-header
+  // align-items: center
+  .adv-header
     font-family: $headers-font
     font-size: 1.8rem
     padding-bottom: 3rem
 
-.adw-image
-  width: 9rem
-  height: 9rem
-  margin-bottom: 3rem
+.adv-image
+	width: 9rem
+	height: 9rem
+	margin-bottom: 3rem
+	position: relative
+	margin: 0 auto
+	margin-bottom: 2rem
+	// display: flex
+	// align-items: center
+	// justify-content: center
+	// text-align: center
+	svg
+		position: absolute
+		height: 100%
+		width: auto
+		left: 50%
+		top: 50%
+		transform: translate(-50%,-50%)
 
 .download-link
-  padding: 5rem 0 0
-  display: flex
-  justify-content: center
+	padding: 5rem 0 0
+	display: flex
+	justify-content: center
+	.btn-white
+		margin-right: 0
 
 
 
@@ -815,6 +929,19 @@ select.tours-form_field,
 	padding: 160px 0 130px
 	@include md
 		padding: 50px 0
+
+.tours-invitation-video_wrap
+	position: relative
+	padding-bottom: 56.25%
+	padding-top: 25px
+	height: 0
+
+.tours-invitation-video_wrap iframe
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
 
 .ladies-video_slider
 	margin-bottom: 60px
@@ -882,7 +1009,7 @@ select.tours-form_field,
 	opacity: 0.8
 	cursor: pointer
 	outline: none
-	z-index: 10
+	z-index: 8
 	i
 		color: $accent
 	&:hover
@@ -893,7 +1020,7 @@ select.tours-form_field,
 		left: -70px
 	&.right-arrow
 		right: -70px
-	@include md
+	@include lg
 		&.left-arrow
 			left: -15px
 		&.right-arrow
@@ -907,7 +1034,6 @@ select.tours-form_field,
 	background-position: 0 0
 	padding-top: 85px
 	padding-bottom: 150px
-
   display: flex
   justify-content: center
   align-content: center
