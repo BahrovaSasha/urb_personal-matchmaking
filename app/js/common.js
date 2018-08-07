@@ -83,4 +83,10 @@ $('.ladies-video_slider-nav').slick({
 $(window).on('load', function() {
 	$('.preloader').delay(1000).fadeOut('slow');
 });
+
+$('#call-datepicker').datepicker({
+	todayButton: new Date(),
+	clearButton: true,
+	timepicker: true
+});
 });

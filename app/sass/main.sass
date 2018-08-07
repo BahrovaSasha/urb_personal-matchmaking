@@ -691,6 +691,7 @@ select.tours-form_field,
 	display: flex
 	align-items: center
 	justify-content: center
+	background-color: #fff
 	@include md
 		width: 28rem
 	h4
@@ -715,6 +716,7 @@ select.tours-form_field,
 	display: flex
 	align-items: center
 	justify-content: center
+	border: none
 	@include md
 		width: 28rem
 	h4
@@ -739,6 +741,7 @@ select.tours-form_field,
 	display: flex
 	align-items: center
 	justify-content: center
+	border: none
 	@include md
 		width: 28rem
 	h4
@@ -753,6 +756,10 @@ select.tours-form_field,
 	i
     color: #fff
     font-size: 2rem
+
+.btn-program-header
+	&:focus
+		outline: none
 
 .program-content-wrapper
 	max-height: 15rem
@@ -816,6 +823,9 @@ select.tours-form_field,
 	border-radius: 24px
 	padding: 0rem 1rem
 	background-color: #fff
+	cursor: pointer
+	&:focus
+		outline: none
 	@include md
 		margin-top: 0
 
@@ -892,12 +902,12 @@ select.tours-form_field,
   // flex-direction: column
   // justify-content: center
   // align-items: center
-  .adv-header
+  .advant-header
     font-family: $headers-font
     font-size: 1.8rem
     padding-bottom: 3rem
 
-.adv-image
+.advant-image
 	svg
 		width: 9rem
 		height: 9rem
