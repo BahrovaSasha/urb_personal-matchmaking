@@ -161,7 +161,7 @@ body
 	margin-right: auto
 	margin-left: auto
 	@include xl
-		max-width: 114rem
+		max-width: 100rem
 	@include lg
 		max-width: 96rem
 	@include md
@@ -603,10 +603,12 @@ select.tours-form_field,
 
 
 .link-call
-  font-size: 1.8rem
-  color: $text
-  text-decoration: underline
-  cursor: pointer
+	font-size: 1.8rem
+	color: $text
+	text-decoration: underline
+	cursor: pointer
+	&:focus
+		color: $text
 
 
 .matchmaking-picture
@@ -643,9 +645,11 @@ select.tours-form_field,
   margin-bottom: 6rem
 
 .link-contact
-  color: $accent
-  text-decoration: underline
-  cursor: pointer
+	color: $accent
+	text-decoration: underline
+	cursor: pointer
+	&:focus
+		color: $accent
 
 .programs-header
   background: linear-gradient(to right,rgba(64,23,157,.9),rgba(234,76,88,.9))
@@ -668,7 +672,7 @@ select.tours-form_field,
 
 .program-item
 	display: flex
-	justify-content: center
+	// justify-content: center
 	flex-direction: column
 	align-items: center
 	margin-bottom: 12rem
@@ -742,6 +746,9 @@ select.tours-form_field,
 	align-items: center
 	justify-content: center
 	border: none
+	i
+		color: #fff
+		font-size: 2rem
 	@include md
 		width: 28rem
 	h4
@@ -753,11 +760,10 @@ select.tours-form_field,
 		margin-bottom: 0
 		@include md
 			font-size: 1.4rem
-	i
-    color: #fff
-    font-size: 2rem
+
 
 .btn-program-header
+	cursor: pointer
 	&:focus
 		outline: none
 
@@ -766,10 +772,14 @@ select.tours-form_field,
 	overflow: hidden
 	position: relative
 	transition: max-height 0.5s ease
+	padding: 0 1.6rem
 	a
-    color: $accent
-    cursor: pointer
-	// display: block
+		color: $accent
+		cursor: pointer
+	.red-p
+		color: $accent
+
+
 	@include lg
 		max-height: 10rem
 
@@ -790,26 +800,31 @@ select.tours-form_field,
   color: $accent
   font-family: $headers-font
   padding-right: 1rem
-  i
-  	color: $accent
-    font-size: 2rem
+
 
 .program-item.active
   .fa-angle-down
     // display: none
-    transition: 0.5s ease
-    transform: rotate(180deg)
-  // .fa-angle-up
-  //   display: block
-  //   transition: 0.5s ease
-  .program-content-wrapper
-    max-height: 60rem
+		transition: 0.5s ease
+		transform: rotate(180deg)
+	.program-content-wrapper
+    max-height: 68rem
     transition: max-height 0.5s ease
+		.close-up
+			border: none
+			background: none
+			.fa-angle-up
+				color: $accent
+				font-size: 2rem
+		// i
+		// 	color: $accent
+		// 	font-size: 2rem
 		.light-overlay
       opacity: 0
       transition: 0.5s ease-out
+
 		@include lg
-			display: block
+			display: flex
 
 
 
@@ -824,15 +839,18 @@ select.tours-form_field,
 	padding: 0rem 1rem
 	background-color: #fff
 	cursor: pointer
-	&:focus
+	&:hover
 		outline: none
+		background-color: $accent
+		color: #fff
+		transition: 0.5s ease-out
 	@include md
 		margin-top: 0
 
-.btn-choose.active
-  background-color: $accent
-  color: #fff
-  transition: 0.5s ease-out
+// .btn-choose.active
+  // background-color: $accent
+  // color: #fff
+  // transition: 0.5s ease-out
 
 
 
@@ -884,14 +902,14 @@ select.tours-form_field,
 
 .advantages-arrow.right-arrow
 	@include xl
-		right: 15px
+		right: -1.5rem
 	@include lg
 		right: 2rem
 		top: 20%
 
 .advantages-arrow.left-arrow
 	@include xl
-		left: 15px
+		left: -1.5rem
 	@include lg
 		left: 2rem
 		top: 20%
