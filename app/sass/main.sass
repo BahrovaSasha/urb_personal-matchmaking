@@ -772,7 +772,6 @@ select.tours-form_field,
 	overflow: hidden
 	position: relative
 	transition: max-height 0.5s ease
-	padding: 0 1.6rem
 	a
 		color: $accent
 		cursor: pointer
@@ -782,19 +781,20 @@ select.tours-form_field,
 
 	@include lg
 		max-height: 10rem
-
+		padding: 0 1rem
 
 .light-overlay
-  background: linear-gradient(to top,rgba(255,255,255,1),rgba(255,255,255,0))
-  position: absolute
-  z-index: 2
-  width: 100%
-  height: 100%
-  margin: 0 auto
-  left: 50%
-  top: 50%
-  transform: translate(-50%,-50%)
-  transition: 0.5s ease-in
+	background: linear-gradient(to top,rgba(255,255,255,1),rgba(255,255,255,0))
+	position: absolute
+	z-index: 2
+	width: 100%
+	height: 100%
+	margin: 0 auto
+	left: 50%
+	top: 50%
+	transform: translate(-50%,-50%)
+	transition: 0.5s ease-in
+	display: flex
 
 .step
   color: $accent
@@ -803,16 +803,19 @@ select.tours-form_field,
 
 
 .program-item.active
-  .fa-angle-down
-    // display: none
+	.fa-angle-down
 		transition: 0.5s ease
-		transform: rotate(180deg)
+		transform: rotate (180deg)
 	.program-content-wrapper
-    max-height: 68rem
-    transition: max-height 0.5s ease
+		max-height: 76rem
+		transition: max-height 0.5s ease
+		@include xl
+			max-height: 86rem
 		.close-up
 			border: none
 			background: none
+			z-index: 3
+			cursor: pointer
 			.fa-angle-up
 				color: $accent
 				font-size: 2rem
@@ -820,11 +823,14 @@ select.tours-form_field,
 		// 	color: $accent
 		// 	font-size: 2rem
 		.light-overlay
-      opacity: 0
-      transition: 0.5s ease-out
+			// opacity: 0
+			transition: 0.5s ease-out
+			// z-index: -10
+			display: none
 
 		@include lg
 			display: flex
+			flex-direction: column
 
 
 
@@ -839,11 +845,14 @@ select.tours-form_field,
 	padding: 0rem 1rem
 	background-color: #fff
 	cursor: pointer
+	// box-sizing: border-box
 	&:hover
 		outline: none
 		background-color: $accent
 		color: #fff
 		transition: 0.5s ease-out
+	&:focus
+		outline: 0
 	@include md
 		margin-top: 0
 
